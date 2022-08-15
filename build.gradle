@@ -53,7 +53,7 @@ kotlin {
         commonMain {
             dependencies {
                 api 'org.jetbrains.kotlin:kotlin-stdlib-common'
-                api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+                implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
             }
         }
         commonTest {
@@ -64,7 +64,7 @@ kotlin {
         if (useTarget['js']) {
             jsMain {
                 dependencies {
-                    implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
+                    api 'org.jetbrains.kotlin:kotlin-stdlib-js'
                     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.6.1'
 
                 }
@@ -79,7 +79,7 @@ kotlin {
             }
             jvmTest {
                 dependencies {
-                    implementation 'org.jetbrains.kotlin:kotlin-test:1.6.21'
+                    api 'org.jetbrains.kotlin:kotlin-test'
                     implementation 'junit:junit:4.13.2'
                     implementation 'io.mockk:mockk:1.12.3'
                     implementation 'io.jumpco.open:kfsm-viz:1.5.2.4'

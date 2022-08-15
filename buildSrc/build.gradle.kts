@@ -24,17 +24,7 @@ plugins {
 }
 
 dependencies {
-    //...
     implementation(kotlin("gradle-plugin", "1.6.21"))
     implementation(gradleApi())
     implementation(localGroovy())
-
-    implementation("org.jetbrains.kotlin:test-junit:1.6.21")
-    implementation("org.jetbrains.kotlin:test:1.6.21")
-    implementation("org.jetbrains.kotlin:stdlib-js:1.6.21")
-    implementation("org.jetbrains.kotlin:test-js:1.6.21")
-    implementation("org.jetbrains.kotlin:test-common:1.6.21")
-    implementation("org.jetbrains.kotlin:test-annotations-common:1.6.21")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21")
-
 }

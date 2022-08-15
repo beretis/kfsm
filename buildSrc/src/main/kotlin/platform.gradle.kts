@@ -20,7 +20,7 @@ val useTarget: MutableMap<String, Boolean> = project.extra["useTarget"] as Mutab
 val defaultProfile: String by project
 
 targetList.forEach { target ->
-    useTarget[target] = true
+    useTarget[target] = defaultProfile.contains(target)
 }
 
 val profile = defaultProfile
@@ -59,14 +59,14 @@ fun configureNative(srcSetMain: KotlinSourceSet, srcSetTest: KotlinSourceSet) {
 
 kotlin {
 
-    if (useTarget["jvm"] != null) {
+    if (useTarget["jvm"] == true) {
         jvm {
             mavenPublication {
                 artifactId = "${project.name}-jvm"
             }
         }
     }
-    if (useTarget["js"] != null) {
+    if (useTarget["js"] == true) {
         if (project.extra.has("nodeInstall")) {
             // tasks.findByPath(":implementationKotlinsJs")?.dependsOn("kotlinNodeJsSetup")
             tasks.findByPath(":kotlinNodeJsSetup")?.onlyIf { true }
@@ -84,28 +84,28 @@ kotlin {
             }
         }
     }
-    if (useTarget["mingw"] != null) {
+    if (useTarget["mingw"] == true) {
         mingwX64("mingw") {
             mavenPublication {
                 artifactId = "${project.name}-mingwX64"
             }
         }
     }
-    if (useTarget["linux"] != null) {
+    if (useTarget["linux"] == true) {
         linuxX64("linux") {
             mavenPublication {
                 artifactId = "${project.name}-linuxX64"
             }
         }
     }
-    if (useTarget["macos"] != null) {
+    if (useTarget["macos"] == true) {
         macosX64("macos") {
             mavenPublication {
                 artifactId = "${project.name}-macosX64"
             }
         }
     }
-    if (useTarget["wasm"] != null) {
+    if (useTarget["wasm"] == true) {
         wasm32("wasm") {
             mavenPublication {
                 artifactId = "${project.name}-wasm32"
@@ -120,53 +120,52 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
-                implementation("org.jetbrains.kotlin:test-common")
-                implementation("org.jetbrains.kotlin:test-annotations-common")
+                implementation("org.jetbrains.kotlin:kotlin-test-common")
+                implementation("org.jetbrains.kotlin:kotlin-test-annotations-common")
             }
         }
-        // THI IS COMPLETELY FUCKED UP
-        if (useTarget["jvm"] != null) {
+        if (useTarget["jvm"] == true) {
             val jvmMain by getting {
                 dependencies {
-                    implementation("org.jetbrains.kotlin:stdlib-jvm")
+                    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
                 }
             }
             val jvmTest by getting {
                 dependencies {
-                    implementation("org.jetbrains.kotlin:test-junit")
-                    implementation("org.jetbrains.kotlin:test")
+                    implementation("org.jetbrains.kotlin:kotlin-test-junit")
+                    implementation("org.jetbrains.kotlin:kotlin-test")
                 }
             }
         }
-        if (useTarget["js"] != null) {
+        if (useTarget["js"] == true) {
             val jsMain by getting {
                 dependencies {
-                    implementation("org.jetbrains.kotlin:stdlib-js")
+                    implementation("org.jetbrains.kotlin:kotlin-stdlib-js")
                 }
             }
             val jsTest by getting {
                 dependencies {
-                    implementation("org.jetbrains.kotlin:test-js")
+                    implementation("org.jetbrains.kotlin:kotlin-test-js")
                 }
                 kotlin.srcDirs("src/jsTest/kotlin")
             }
         }
-        if (useTarget["mingw"] != null) {
+        if (useTarget["mingw"] == true) {
             val mingwMain by getting
             val mingwTest by getting
             configureNative(mingwMain, mingwTest)
         }
-        if (useTarget["linux"] != null) {
+        if (useTarget["linux"] == true) {
             val linuxMain by getting
             val linuxTest by getting
             configureNative(linuxMain, linuxTest)
         }
-        if (useTarget["macos"] != null) {
+        if (useTarget["macos"] == true) {
             val macosMain by getting
             val macosTest by getting
             configureNative(macosMain, macosTest)
         }
-        if (useTarget["wasm"] != null) {
+        if (useTarget["wasm"] == true) {
             val wasmMain by getting
             val wasmTest by getting
             configureNative(wasmMain, wasmTest)
