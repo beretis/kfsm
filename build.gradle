@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version '1.6.21'
+    id 'org.jetbrains.kotlin.multiplatform'
     id 'org.jetbrains.dokka' version '1.6.21'
     id 'maven-publish'
     id 'signing'
@@ -21,6 +21,7 @@ plugins {
     id 'com.cosminpolifronie.gradle.plantuml' version '1.6.0'
     id 'io.jumpco.open.kfsm.viz-plugin' version '1.5.2.4'
     id 'org.jetbrains.qodana' version '0.1.12'
+    id 'platform'
 }
 
 repositories {
@@ -37,13 +38,8 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-plugins {
-    id 'platform'
-}
-
-//apply from: "$rootProject.projectDir/gradle/platform.gradle"
-apply from: "$rootProject.projectDir/gradle/docs.gradle"
-apply from: "$rootProject.projectDir/gradle/publish.gradle"
+apply from: "$rootProject.projectDir/buildSrc/docs.gradle"
+//apply from: "$rootProject.projectDir/buildSrc/publish.gradle"
 
 def useTarget = project.ext.useTarget
 

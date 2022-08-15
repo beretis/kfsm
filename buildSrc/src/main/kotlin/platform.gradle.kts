@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
+
 /*
  * Copyright (c) 2022. Open JumpCO
  *
@@ -50,117 +52,124 @@ if (profile.contains("wasm")) {
     useTarget["wasm"] = true
 }
 
-// fun configureNative(srcSetMain: KotlinSourceSet, srcSetTest: KotlinSourceSet) {
-//     srcSetMain.kotlin.srcDirs = listOf("src/nativeMain/kotlin")
-//     srcSetTest.kotlin.srcDirs = listOf("src/nativeTest/kotlin")
-// }
+fun configureNative(srcSetMain: KotlinSourceSet, srcSetTest: KotlinSourceSet) {
+    srcSetMain.kotlin.srcDirs("src/nativeMain/kotlin")
+    srcSetTest.kotlin.srcDirs("src/nativeTest/kotlin")
+}
 
 kotlin {
 
-    // if (useTarget["jvm"] != null) {
-    //     jvm {
-    //         mavenPublication {
-    //             artifactId = "${project.name}-jvm"
-    //         }
-    //     }
-    // }
-    // if (useTarget["js"]) {
-    //     if (project.extra.has("nodeInstall")) {
-    //         // tasks.findByPath(":implementationKotlinsJs")?.dependsOn("kotlinNodeJsSetup")
-    //         tasks.findByPath(":kotlinNodeJsSetup")?.onlyIf { true }
-    //     }
-    //     js("js") {
-    //         nodejs()
-    //         browser()
-    //         compilations.main {
-    //             kotlinOptions {
-    //                 metaInfo = true
-    //                 sourceMap = true
-    //                 verbose = true
-    //                 moduleKind = "umd"
-    //             }
-    //         }
-    //     }
-    // }
-    // if (useTarget["mingw"]) {
-    //     mingwX64("mingw") {
-    //         mavenPublication {
-    //             artifactId = "${project.name}-mingwX64"
-    //         }
-    //     }
-    // }
-    // if (useTarget["linux"]) {
-    //     linuxX64("linux") {
-    //         mavenPublication {
-    //             artifactId = "${project.name}-linuxX64"
-    //         }
-    //     }
-    // }
-    // if (useTarget["macos"]) {
-    //     macosX64("macos") {
-    //         mavenPublication {
-    //             artifactId = "${project.name}-macosX64"
-    //         }
-    //     }
-    // }
-    // if (useTarget["wasm"]) {
-    //     wasm32("wasm") {
-    //         mavenPublication {
-    //             artifactId = "${project.name}-wasm32"
-    //         }
-    //     }
-    // }
-    // sourceSets {
-    //     val commonMain by getting {
-    //         dependencies {
-    //             implementation kotlin("stdlib-common")
-    //
-    //         }
-    //     }
-    //     val commonTest by getting {
-    //         dependencies {
-    //             implementation kotlin("test-common")
-    //             implementation kotlin("test-annotations-common")
-    //         }
-    //     }
-    //     // // THI IS COMPLETELY FUCKED UP
-    //     // if named("(useTargetlistOf("jvm"))") {
-    //     //     named("jvmMain") {
-    //     //         named("dependencies") {
-    //     //             implementation kotlin("stdlib-jdk8")
-    //     //         }
-    //     //     }
-    //     //     named("jvmTest") {
-    //     //         named("dependencies") {
-    //     //             implementation kotlin("test")
-    //     //             implementation kotlin("test-junit")
-    //     //         }
-    //     //     }
-    //     // }
-    //     // if named("(useTargetlistOf("js"))") {
-    //     //     named("jsMain") {
-    //     //         named("dependencies") {
-    //     //             implementation kotlin("stdlib-js")
-    //     //         }
-    //     //     }
-    //     //     named("jsTest") {
-    //     //         named("dependencies") {
-    //     //             implementation kotlin("test-js")
-    //     //         }
-    //     //         kotlin.srcDirs = listOf("src/jsTest/kotlin")
-    //     //     }
-    //     // }
-    //     // if named("(useTargetlistOf("mingw"))") {
-    //     //     configureNative(mingwMain, mingwTest)
-    //     // }
-    //     // if named("(useTargetlistOf("linux"))") {
-    //     //     configureNative(linuxMain, linuxTest)
-    //     // }
-    //     // if named("(useTargetlistOf("macos"))") {
-    //     //     configureNative(macosMain, macosTest)
-    //     // }
-    //     // if named("(useTargetlistOf("wasm"))") {
-    //     //     configureNative(wasmMain, wasmTest)
-    //     // }
-    // }
+    if (useTarget["jvm"] != null) {
+        jvm {
+            mavenPublication {
+                artifactId = "${project.name}-jvm"
+            }
+        }
+    }
+    if (useTarget["js"] != null) {
+        if (project.extra.has("nodeInstall")) {
+            // tasks.findByPath(":implementationKotlinsJs")?.dependsOn("kotlinNodeJsSetup")
+            tasks.findByPath(":kotlinNodeJsSetup")?.onlyIf { true }
+        }
+        js("js") {
+            nodejs()
+            browser()
+            compilations.named("main").apply {
+                this.get().kotlinOptions.apply {
+                    metaInfo = true
+                    sourceMap = true
+                    verbose = true
+                    moduleKind = "umd"
+                }
+            }
+        }
+    }
+    if (useTarget["mingw"] != null) {
+        mingwX64("mingw") {
+            mavenPublication {
+                artifactId = "${project.name}-mingwX64"
+            }
+        }
+    }
+    if (useTarget["linux"] != null) {
+        linuxX64("linux") {
+            mavenPublication {
+                artifactId = "${project.name}-linuxX64"
+            }
+        }
+    }
+    if (useTarget["macos"] != null) {
+        macosX64("macos") {
+            mavenPublication {
+                artifactId = "${project.name}-macosX64"
+            }
+        }
+    }
+    if (useTarget["wasm"] != null) {
+        wasm32("wasm") {
+            mavenPublication {
+                artifactId = "${project.name}-wasm32"
+            }
+        }
+    }
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+            }
+        }
+        val commonTest by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlin:test-common")
+                implementation("org.jetbrains.kotlin:test-annotations-common")
+            }
+        }
+        // THI IS COMPLETELY FUCKED UP
+        if (useTarget["jvm"] != null) {
+            val jvmMain by getting {
+                dependencies {
+                    implementation("org.jetbrains.kotlin:stdlib-jvm")
+                }
+            }
+            val jvmTest by getting {
+                dependencies {
+                    implementation("org.jetbrains.kotlin:test-junit")
+                    implementation("org.jetbrains.kotlin:test")
+                }
+            }
+        }
+        if (useTarget["js"] != null) {
+            val jsMain by getting {
+                dependencies {
+                    implementation("org.jetbrains.kotlin:stdlib-js")
+                }
+            }
+            val jsTest by getting {
+                dependencies {
+                    implementation("org.jetbrains.kotlin:test-js")
+                }
+                kotlin.srcDirs("src/jsTest/kotlin")
+            }
+        }
+        if (useTarget["mingw"] != null) {
+            val mingwMain by getting
+            val mingwTest by getting
+            configureNative(mingwMain, mingwTest)
+        }
+        if (useTarget["linux"] != null) {
+            val linuxMain by getting
+            val linuxTest by getting
+            configureNative(linuxMain, linuxTest)
+        }
+        if (useTarget["macos"] != null) {
+            val macosMain by getting
+            val macosTest by getting
+            configureNative(macosMain, macosTest)
+        }
+        if (useTarget["wasm"] != null) {
+            val wasmMain by getting
+            val wasmTest by getting
+            configureNative(wasmMain, wasmTest)
+        }
+    }
 }
