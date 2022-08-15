@@ -37,7 +37,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-apply from: "$rootProject.projectDir/gradle/platform.gradle"
+plugins {
+    id 'platform'
+}
+
+//apply from: "$rootProject.projectDir/gradle/platform.gradle"
 apply from: "$rootProject.projectDir/gradle/docs.gradle"
 apply from: "$rootProject.projectDir/gradle/publish.gradle"
 
