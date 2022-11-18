@@ -18,7 +18,7 @@
 
 apply plugin: 'org.jetbrains.kotlin.multiplatform'
 
-def targetList = ['mingw', 'linux', 'macos', 'js', 'jvm', 'wasm']
+def targetList = ['mingw', 'linux', 'macos', 'js', 'jvm', 'wasm', 'ios']
 project.ext.useTarget = [:]
 def useTarget = project.ext.useTarget
 
@@ -53,6 +53,9 @@ if (profile.contains('macos')) {
 if (profile.contains('wasm')) {
     useTarget['wasm'] = true
 }
+if (profile.contains('ios')) {
+    useTarget['ios'] = true
+}
 
 def configureNative(srcSetMain, srcSetTest) {
     srcSetMain.kotlin.srcDirs = ['src/nativeMain/kotlin']
@@ -60,7 +63,6 @@ def configureNative(srcSetMain, srcSetTest) {
 }
 
 kotlin {
-
     if (useTarget['jvm']) {
         jvm() {
             mavenPublication {
@@ -119,6 +121,9 @@ kotlin {
                 artifactId = "${project.name}-wasm32"
             }
         }
+    }
+    if (useTarget['ios']) {
+        ios()
     }
     sourceSets {
         commonMain {

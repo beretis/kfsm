@@ -1,9 +1,10 @@
 buildscript {
     repositories {
-        mavenLocal()
-        maven { url = 'https://maven.pkg.jetbrains.space/kotlin/p/kotlin/temporary' }
+        google()
+        jcenter()
         gradlePluginPortal()
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
         classpath group: 'org.jetbrains.kotlinx', name: 'kotlinx-html-jvm', version: '0.7.3'
@@ -28,8 +29,9 @@ repositories {
     maven { url = 'https://maven.pkg.jetbrains.space/kotlin/p/kotlin/temporary' }
     mavenCentral()
 }
-group = 'io.jumpco.open'
-version = '1.6.1'
+
+group = 'com.fireball.kfsm'
+version = '1.0.0'
 description = 'Kotlin Finite-state machine'
 
 java {
@@ -53,7 +55,7 @@ kotlin {
         commonMain {
             dependencies {
                 api 'org.jetbrains.kotlin:kotlin-stdlib-common'
-                api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+                api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
             }
         }
         commonTest {

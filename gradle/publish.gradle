@@ -73,51 +73,51 @@ def configureMavenCentralMetadata = { pom ->
     root.children().last() + pomConfig
 }
 
-publishing {
-    repositories {
-        maven {
-            logger.lifecycle("maven:publish:version=$version")
-            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots'
-            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
-            url = project.version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-            credentials {
-                username rootProject.ext.find('ossJiraUser') ?: System.getenv('OSS_JIRA_USER')
-                password rootProject.ext.find('ossJiraPwd') ?: System.getenv('OSS_JIRA_PWD')
-            }
-        }
-    }
-    def platforms = ['js', 'jvm', 'linux', 'mingw', 'macos', 'wasm']
-    publications.all { publication ->
-        pom.withXml(configureMavenCentralMetadata)
-        logger.info "publication:$publication.name"
-        if (platforms.contains(publication.name)) {
-            publication.artifact javadocJar
-        }
-    }
-}
+//publishing {
+//    repositories {
+//        maven {
+//            logger.lifecycle("maven:publish:version=$version")
+//            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots'
+//            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
+//            url = project.version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+//            credentials {
+//                username rootProject.ext.find('ossJiraUser') ?: System.getenv('OSS_JIRA_USER')
+//                password rootProject.ext.find('ossJiraPwd') ?: System.getenv('OSS_JIRA_PWD')
+//            }
+//        }
+//    }
+//    def platforms = ['js', 'jvm', 'linux', 'mingw', 'macos', 'wasm']
+//    publications.all { publication ->
+//        pom.withXml(configureMavenCentralMetadata)
+//        logger.info "publication:$publication.name"
+//        if (platforms.contains(publication.name)) {
+//            publication.artifact javadocJar
+//        }
+//    }
+//}
 
 
-signing {
-    sign publishing.publications.kotlinMultiplatform
-    // sign publishing.publications.metadata
-    sign publishing.publications.documentation
-
-    if (useTarget['jvm']) {
-        sign publishing.publications.jvm
-    }
-    if (useTarget['js']) {
-        sign publishing.publications.js
-    }
-    if (useTarget['macos']) {
-        sign publishing.publications.macos
-    }
-    if (useTarget['linux']) {
-        sign publishing.publications.linux
-    }
-    if (useTarget['mingw']) {
-        sign publishing.publications.mingw
-    }
-    if (useTarget['wasm']) {
-        sign publishing.publications.wasm
-    }
-}
+//signing {
+//    sign publishing.publications.kotlinMultiplatform
+//    // sign publishing.publications.metadata
+//    sign publishing.publications.documentation
+//
+//    if (useTarget['jvm']) {
+//        sign publishing.publications.jvm
+//    }
+//    if (useTarget['js']) {
+//        sign publishing.publications.js
+//    }
+//    if (useTarget['macos']) {
+//        sign publishing.publications.macos
+//    }
+//    if (useTarget['linux']) {
+//        sign publishing.publications.linux
+//    }
+//    if (useTarget['mingw']) {
+//        sign publishing.publications.mingw
+//    }
+//    if (useTarget['wasm']) {
+//        sign publishing.publications.wasm
+//    }
+//}
