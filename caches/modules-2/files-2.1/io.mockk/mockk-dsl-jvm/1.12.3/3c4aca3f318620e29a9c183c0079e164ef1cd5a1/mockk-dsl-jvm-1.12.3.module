@@ -1,0 +1,94 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.mockk",
+    "module": "mockk-dsl-jvm",
+    "version": "1.12.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.mockk",
+          "module": "mockk-dsl",
+          "version": {
+            "requires": "1.12.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mockk-dsl-jvm-1.12.3.jar",
+          "url": "mockk-dsl-jvm-1.12.3.jar",
+          "size": 454909,
+          "sha512": "0a02436e45d85e733d92c7c5d14d21db4287170af69a692604b05ccfa4e833310eeae23caac2344558a072cbf73e47c2dc20ee06ae57d5ea03fad5feb18a5a8f",
+          "sha256": "038d1c794cb26e3f56d217fa31ccf9b9f08bdec18c50b078705ed8f2fe1006b9",
+          "sha1": "795ed16177ad99753cac5722b3cdb4a66cba274a",
+          "md5": "2f3174695874bf58cd73ad977d53cda6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk-dsl",
+          "version": {
+            "requires": "1.12.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mockk-dsl-jvm-1.12.3.jar",
+          "url": "mockk-dsl-jvm-1.12.3.jar",
+          "size": 454909,
+          "sha512": "0a02436e45d85e733d92c7c5d14d21db4287170af69a692604b05ccfa4e833310eeae23caac2344558a072cbf73e47c2dc20ee06ae57d5ea03fad5feb18a5a8f",
+          "sha256": "038d1c794cb26e3f56d217fa31ccf9b9f08bdec18c50b078705ed8f2fe1006b9",
+          "sha1": "795ed16177ad99753cac5722b3cdb4a66cba274a",
+          "md5": "2f3174695874bf58cd73ad977d53cda6"
+        }
+      ]
+    }
+  ]
+}

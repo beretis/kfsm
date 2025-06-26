@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-coroutines-core/1.7.3/kotlinx-coroutines-core-1.7.3.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-coroutines-core",
+    "version": "1.7.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core.klib",
+          "url": "kotlinx-coroutines-core-iossimulatorarm64-1.7.3.klib",
+          "size": 765847,
+          "sha512": "4904ee4c6ab2774f5f7db7053c4239fdd26bbe0bd07451289d507b88c379652e22a7910d17df73019ed6f60616ae7984e2a8864487fc3f304ade199a6f9d3c68",
+          "sha256": "67cc63b6fb2d0f8213d9e49626126f4ecc43604a6e22d5c6267d138a320c3a2a",
+          "sha1": "6ad072fedc48f882b4d14cd34f8b74a831753a9c",
+          "md5": "5e8b62047e848c1eb25cc618b0c41394"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-iossimulatorarm64-1.7.3-sources.jar",
+          "url": "kotlinx-coroutines-core-iossimulatorarm64-1.7.3-sources.jar",
+          "size": 315719,
+          "sha512": "d67a9ec08602ba919d09da0f79a3b923827cc9167971369d8c86d170dd95c99affe17399b6460db7a283b45905a7f9eb3b1efa4908642b974fc9a47e3dc715e5",
+          "sha256": "9b36502170499d6b50edbf9fb05b662d73a75a897c4bf1d9a0efd8bf1d943fbe",
+          "sha1": "e67f7280a0790412e2726ee787614f0a3f773f0c",
+          "md5": "d0b1ca9b0063f037cbdee58d1b10b2c5"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-iossimulatorarm64-1.7.3-metadata.jar",
+          "url": "kotlinx-coroutines-core-iossimulatorarm64-1.7.3-metadata.jar",
+          "size": 4738,
+          "sha512": "17b89d0aadc82f05c85a2ea1e353d9877430aafefb55b9af0fc1c7297951058f123abf205efb49dbba3c487d7b53b251903949abc2604f242f8256e1d7c4d325",
+          "sha256": "e0dfbcd28a285ece7e5d67dfb1ebebf9a964fac69e5b8e88372c5c9d896b9913",
+          "sha1": "80833b5d237ea2eb6bdef9778f14994149a3c99c",
+          "md5": "1c2f3bc2c6efe7aaeaae91907249b324"
+        }
+      ]
+    }
+  ]
+}

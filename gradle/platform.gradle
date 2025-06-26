@@ -102,16 +102,26 @@ kotlin {
         }
     }
     if (useTarget['linux']) {
-        linuxX64('linux') {
+        linuxX64('linuxX64') {
             mavenPublication {
                 artifactId = "${project.name}-linuxX64"
             }
         }
+        linuxArm64('linuxArm64') {
+            mavenPublication {
+                artifactId = "${project.name}-linuxArm64"
+            }
+        }
     }
     if (useTarget['macos']) {
-        macosX64('macos') {
+        macosX64('macosX64') {
             mavenPublication {
                 artifactId = "${project.name}-macosX64"
+            }
+        }
+        macosArm64('macosArm64') {
+            mavenPublication {
+                artifactId = "${project.name}-macosArm64"
             }
         }
     }
@@ -123,7 +133,9 @@ kotlin {
         }
     }
     if (useTarget['ios']) {
-        ios()
+        iosX64()
+        iosArm64()
+        iosSimulatorArm64()
     }
     sourceSets {
         commonMain {
@@ -167,10 +179,12 @@ kotlin {
             configureNative(mingwMain, mingwTest)
         }
         if (useTarget['linux']) {
-            configureNative(linuxMain, linuxTest)
+            configureNative(linuxX64Main, linuxX64Test)
+            configureNative(linuxArm64Main, linuxArm64Test)
         }
         if (useTarget['macos']) {
-            configureNative(macosMain, macosTest)
+            configureNative(macosX64Main, macosX64Test)
+            configureNative(macosArm64Main, macosArm64Test)
         }
         if (useTarget['wasm']) {
             configureNative(wasmMain, wasmTest)

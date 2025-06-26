@@ -1,0 +1,67 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.mockk",
+    "module": "mockk-dsl",
+    "version": "1.12.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "mockk-dsl-1.12.3.jar",
+          "url": "mockk-dsl-1.12.3.jar",
+          "size": 39721,
+          "sha512": "162aa758dcfd5fc781fc6b108c9ad7940ac8f084a649f718625b601ed0f9a4be53489d5f51b4edbc563dca7d8438d98c728357ab72d9aacf1aa864739b398e83",
+          "sha256": "05ceb1530ec4e6f9c7a1fe9c5b194a97e48023a95aaa4b91c96364f70c020f93",
+          "sha1": "88a34e3dc9aea295ef4711b5f23ef42e782169a9",
+          "md5": "d66d5b7cc98fe5cd527b66aafcdbd99e"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.6.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mockk-dsl-1.12.3.jar",
+          "url": "mockk-dsl-1.12.3.jar",
+          "size": 39721,
+          "sha512": "162aa758dcfd5fc781fc6b108c9ad7940ac8f084a649f718625b601ed0f9a4be53489d5f51b4edbc563dca7d8438d98c728357ab72d9aacf1aa864739b398e83",
+          "sha256": "05ceb1530ec4e6f9c7a1fe9c5b194a97e48023a95aaa4b91c96364f70c020f93",
+          "sha1": "88a34e3dc9aea295ef4711b5f23ef42e782169a9",
+          "md5": "d66d5b7cc98fe5cd527b66aafcdbd99e"
+        }
+      ]
+    }
+  ]
+}

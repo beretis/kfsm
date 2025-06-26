@@ -1,0 +1,83 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.mockk",
+    "module": "mockk-common",
+    "version": "1.12.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "io.mockk",
+          "module": "mockk-dsl",
+          "version": {
+            "requires": "1.12.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mockk-common-1.12.3.jar",
+          "url": "mockk-common-1.12.3.jar",
+          "size": 44386,
+          "sha512": "c809ca50b6fddd602280ca7da6bdedaa1ff115fdac33ce9592d4f5c61d3317931278703fb16a53c13c062ded8ee3e6104325bc349495258bd1731d8ddd010d81",
+          "sha256": "2fb0d511ab5ec1fa31981d1dba94a9f8da603787a81e59d36395c695b661a2ab",
+          "sha1": "0d1f65aba9a86235ab301c00a4e79d3de3527f6c",
+          "md5": "d97e14bd4d718a7cef22699bd3e12844"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.6.0"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk-dsl",
+          "version": {
+            "requires": "1.12.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "mockk-common-1.12.3.jar",
+          "url": "mockk-common-1.12.3.jar",
+          "size": 44386,
+          "sha512": "c809ca50b6fddd602280ca7da6bdedaa1ff115fdac33ce9592d4f5c61d3317931278703fb16a53c13c062ded8ee3e6104325bc349495258bd1731d8ddd010d81",
+          "sha256": "2fb0d511ab5ec1fa31981d1dba94a9f8da603787a81e59d36395c695b661a2ab",
+          "sha1": "0d1f65aba9a86235ab301c00a4e79d3de3527f6c",
+          "md5": "d97e14bd4d718a7cef22699bd3e12844"
+        }
+      ]
+    }
+  ]
+}

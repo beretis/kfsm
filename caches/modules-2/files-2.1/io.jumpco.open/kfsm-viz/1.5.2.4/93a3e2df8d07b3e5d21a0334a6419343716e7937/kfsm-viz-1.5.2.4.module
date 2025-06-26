@@ -1,0 +1,74 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.jumpco.open",
+    "module": "kfsm-viz",
+    "version": "1.5.2.4",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.8.3",
+      "buildId": "hjund4btkfeytkqdh2h7fjfqsa"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kfsm-viz-1.5.2.4.jar",
+          "url": "kfsm-viz-1.5.2.4.jar",
+          "size": 16866560,
+          "sha512": "c16a8750a5f8ed640b51337d5010734143a5999a8f1f7628e85a812906aef906303d2e6951a9b1a80c7b5aa0d637e7daa921621e56a6af0458b5165a32596174",
+          "sha256": "831875606991c6fb674a012468e0bdcb32b007515b176bb2d21cfee9d62701ae",
+          "sha1": "15251cd23285626778ac59c83ede6ee22a10e479",
+          "md5": "d0ae33239cd7ffa1e675bf20124fa442"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kfsm-viz-1.5.2.4.jar",
+          "url": "kfsm-viz-1.5.2.4.jar",
+          "size": 16866560,
+          "sha512": "c16a8750a5f8ed640b51337d5010734143a5999a8f1f7628e85a812906aef906303d2e6951a9b1a80c7b5aa0d637e7daa921621e56a6af0458b5165a32596174",
+          "sha256": "831875606991c6fb674a012468e0bdcb32b007515b176bb2d21cfee9d62701ae",
+          "sha1": "15251cd23285626778ac59c83ede6ee22a10e479",
+          "md5": "d0ae33239cd7ffa1e675bf20124fa442"
+        }
+      ]
+    }
+  ]
+}

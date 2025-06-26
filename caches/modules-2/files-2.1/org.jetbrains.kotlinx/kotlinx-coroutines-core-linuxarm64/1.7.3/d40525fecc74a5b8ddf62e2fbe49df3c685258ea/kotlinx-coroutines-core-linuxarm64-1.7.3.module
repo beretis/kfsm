@@ -1,0 +1,85 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-coroutines-core/1.7.3/kotlinx-coroutines-core-1.7.3.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-coroutines-core",
+    "version": "1.7.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core.klib",
+          "url": "kotlinx-coroutines-core-linuxarm64-1.7.3.klib",
+          "size": 760806,
+          "sha512": "d42fb0712f93a3c535034e12fb7a6d2da43fc1524ae5730a57f0c5f2ba89146aab8ecc46318b4893b2e9e9e26330dc5377f1bd81427ceec58f09af9aa116d9a7",
+          "sha256": "5735eb8214ee8bd2ac69fa46a0e8171a041a43fff8f1f1e18c94768801412b34",
+          "sha1": "d30346c3bf14a4cd5551efc9dd8ab70b76eb5e96",
+          "md5": "e382c1c19f5a3032aa3db2f08f59c754"
+        }
+      ]
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-linuxarm64-1.7.3-sources.jar",
+          "url": "kotlinx-coroutines-core-linuxarm64-1.7.3-sources.jar",
+          "size": 315115,
+          "sha512": "674495be78a7352d9aed6b9faf0224e2aae4c0e63ac99b107b4e58a6d435d1dc708d35e369ce5c132d1af993d4ed8c83ee748822dbd5071c7578dea1913e73e3",
+          "sha256": "22a5a6cf3cf155822cef5fdbfe0ccea2e0a70e9c347caea55363eac4e2216c07",
+          "sha1": "4258f12f9c394a23349bd1e474594eeaa0ccef77",
+          "md5": "bf7cc5cd57631ceb47170b9345992fa8"
+        }
+      ]
+    }
+  ]
+}

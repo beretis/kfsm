@@ -1,0 +1,125 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.dokka",
+    "module": "analysis-markdown",
+    "version": "1.9.10",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "analysis-markdown-1.9.10.jar",
+          "url": "analysis-markdown-1.9.10.jar",
+          "size": 33869,
+          "sha512": "699a58c0a77b61a3c2dcc990e2b67e60ce663283af7d0415d73fef0d0d2fe773354b465637e0639f543713291d9c6a4c5d2c419f3f68c7c15d0ab1ba1d81a56b",
+          "sha256": "df4e901f38acd30f35534162f3ccb6771763556aa83fd80020706b5ce8763674",
+          "sha1": "ec2af2275d37eec1aa842fb7e77d259f4c0f14bb",
+          "md5": "4922deb66658f6b1848a61991ade4e47"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jsoup",
+          "module": "jsoup",
+          "version": {
+            "requires": "1.15.3"
+          }
+        },
+        {
+          "group": "org.jetbrains",
+          "module": "markdown",
+          "version": {
+            "requires": "0.3.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "analysis-markdown-1.9.10.jar",
+          "url": "analysis-markdown-1.9.10.jar",
+          "size": 33869,
+          "sha512": "699a58c0a77b61a3c2dcc990e2b67e60ce663283af7d0415d73fef0d0d2fe773354b465637e0639f543713291d9c6a4c5d2c419f3f68c7c15d0ab1ba1d81a56b",
+          "sha256": "df4e901f38acd30f35534162f3ccb6771763556aa83fd80020706b5ce8763674",
+          "sha1": "ec2af2275d37eec1aa842fb7e77d259f4c0f14bb",
+          "md5": "4922deb66658f6b1848a61991ade4e47"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "analysis-markdown-1.9.10-sources.jar",
+          "url": "analysis-markdown-1.9.10-sources.jar",
+          "size": 10527,
+          "sha512": "ca11673102639395ee69835993e120c7ea296eb1f86a9790b4e7ad3c200dd724f3c73b412e5a32cf796a4e3872652640f56a46a543b977891c390597e88f9f5d",
+          "sha256": "cb26c1fdee4635bebc70d88f14e896900d0fb76069e231a0da04a91d6c917ac5",
+          "sha1": "9cc02f5ab9593de0f91e9c33ebcc15be1419f89a",
+          "md5": "94514f3704fbb5ad5058dbc9c6a70a2c"
+        },
+        {
+          "name": "analysis-markdown-1.9.10-sources.jar",
+          "url": "analysis-markdown-1.9.10-sources.jar",
+          "size": 10527,
+          "sha512": "ca11673102639395ee69835993e120c7ea296eb1f86a9790b4e7ad3c200dd724f3c73b412e5a32cf796a4e3872652640f56a46a543b977891c390597e88f9f5d",
+          "sha256": "cb26c1fdee4635bebc70d88f14e896900d0fb76069e231a0da04a91d6c917ac5",
+          "sha1": "9cc02f5ab9593de0f91e9c33ebcc15be1419f89a",
+          "md5": "94514f3704fbb5ad5058dbc9c6a70a2c"
+        }
+      ]
+    }
+  ]
+}

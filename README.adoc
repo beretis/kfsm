@@ -16,6 +16,15 @@ This is a small implementation of an FSM in Kotlin.
 * link:https://github.com/open-jumpco/kfsm-spring-rest[Turnstile Sample for Spring HATEOAS]
 * link:https://github.com/open-jumpco/kfsm-android-compose-traffic[Traffic Intersection for Android Compose]
 
+== Platform Support
+
+KFSM supports all major platforms including JVM, JavaScript, WebAssembly, iOS, Android, macOS, Linux, and Windows. See link:PLATFORM_SUPPORT.md[Platform Support Documentation] for detailed information about:
+
+* Platform-specific build artifacts
+* Testing commands for each platform
+* Configuration examples
+* Cross-platform development guidelines
+
 == Getting Started
 
 The state machine implementation supports events triggering transitions from one state to another while performing an optional action as well as entry and exit actions.

@@ -1,0 +1,127 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.kotlin",
+    "module": "kotlinx-atomicfu-runtime",
+    "version": "1.8.20",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsLegacyApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "legacy",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-atomicfu-runtime-1.8.20.jar",
+          "url": "kotlinx-atomicfu-runtime-1.8.20.jar",
+          "size": 4625,
+          "sha512": "0987f4c432b01ed6c93c86b38e795591711844af002ea95a9776fc09eade6d329ec243753489d5ac871ee3b280c975bd371d76e1910c71bf7a770df73b331bb7",
+          "sha256": "2ce6a4ed97c548d37097a970611fc7cd5970a00c452e52d82f3b8aca707be06d",
+          "sha1": "4219b4aa308de9ef2d1ec6bc00f67f098f36857e",
+          "md5": "e6c8908b8fe0ad0de8c28d1030c46111"
+        }
+      ]
+    },
+    {
+      "name": "jsLegacyRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "legacy",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-atomicfu-runtime-1.8.20.jar",
+          "url": "kotlinx-atomicfu-runtime-1.8.20.jar",
+          "size": 4625,
+          "sha512": "0987f4c432b01ed6c93c86b38e795591711844af002ea95a9776fc09eade6d329ec243753489d5ac871ee3b280c975bd371d76e1910c71bf7a770df73b331bb7",
+          "sha256": "2ce6a4ed97c548d37097a970611fc7cd5970a00c452e52d82f3b8aca707be06d",
+          "sha1": "4219b4aa308de9ef2d1ec6bc00f67f098f36857e",
+          "md5": "e6c8908b8fe0ad0de8c28d1030c46111"
+        }
+      ]
+    },
+    {
+      "name": "commonFakeApiElements-published",
+      "attributes": {
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "common"
+      }
+    },
+    {
+      "name": "jsIrApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-atomicfu-runtime-1.8.20.klib",
+          "url": "kotlinx-atomicfu-runtime-1.8.20.klib",
+          "size": 8049,
+          "sha512": "558b80d806b83893dfcd3b7bdd631f35faa49917a6135585dc0b0d434a56fc8e9755fe064aed71e33090ba116fd3fade70d5731c1d07281ff795cbfa37cdecfc",
+          "sha256": "0ae1bc5ece1eecf89810f01330d948612ec5ef4a520c854468832ecb9b04e562",
+          "sha1": "8ccfa77dc6cd3ff5ffaad24ea15747327d4492ea",
+          "md5": "b46afadddcba370fc645fa3a77357e53"
+        }
+      ]
+    },
+    {
+      "name": "jsIrRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-atomicfu-runtime-1.8.20.klib",
+          "url": "kotlinx-atomicfu-runtime-1.8.20.klib",
+          "size": 8049,
+          "sha512": "558b80d806b83893dfcd3b7bdd631f35faa49917a6135585dc0b0d434a56fc8e9755fe064aed71e33090ba116fd3fade70d5731c1d07281ff795cbfa37cdecfc",
+          "sha256": "0ae1bc5ece1eecf89810f01330d948612ec5ef4a520c854468832ecb9b04e562",
+          "sha1": "8ccfa77dc6cd3ff5ffaad24ea15747327d4492ea",
+          "md5": "b46afadddcba370fc645fa3a77357e53"
+        }
+      ]
+    },
+    {
+      "name": "jsLegacySourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "legacy",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotlinx-atomicfu-runtime-1.8.20-sources.jar",
+          "url": "kotlinx-atomicfu-runtime-1.8.20-sources.jar",
+          "size": 1288,
+          "sha512": "b6817443e76667242d96a1e51f71a1117f734a2c2b4de35479bbf059d72fe513fe42d99479c09841a415ed4276bb162ecd78474059d5637b454e279a85bcbf5c",
+          "sha256": "4bf3175ac51f4efb166819b99ffe3754e277d0f8e1acc7c33fb535a8f28b413b",
+          "sha1": "420b29f11d5f742c5011b97bfec393fa8c83c91a",
+          "md5": "51e6e74b55fe5ac0fc9914d41c3590fd"
+        }
+      ]
+    }
+  ]
+}

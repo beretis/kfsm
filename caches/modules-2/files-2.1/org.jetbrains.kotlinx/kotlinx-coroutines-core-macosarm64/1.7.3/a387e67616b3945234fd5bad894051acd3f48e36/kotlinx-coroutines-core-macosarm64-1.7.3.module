@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-coroutines-core/1.7.3/kotlinx-coroutines-core-1.7.3.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-coroutines-core",
+    "version": "1.7.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core.klib",
+          "url": "kotlinx-coroutines-core-macosarm64-1.7.3.klib",
+          "size": 765779,
+          "sha512": "ad5b936b189d5f004f915aff9a1dd73f987107d5513ab7927f6ce7cb3c23a534c8458de864bb3d7e571366a7cf579059d0ba423a15a3248ea46b0f61e4b561dc",
+          "sha256": "c7afe1f452b8bdd958d4d0cd0019428c58f718e74ea3d38a76681160f64d8c49",
+          "sha1": "24f9879eca13a8dbb735b7b45a9955f1cff8623d",
+          "md5": "90db48caa7862d8356dfccf721bea7ec"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-macosarm64-1.7.3-sources.jar",
+          "url": "kotlinx-coroutines-core-macosarm64-1.7.3-sources.jar",
+          "size": 315719,
+          "sha512": "d67a9ec08602ba919d09da0f79a3b923827cc9167971369d8c86d170dd95c99affe17399b6460db7a283b45905a7f9eb3b1efa4908642b974fc9a47e3dc715e5",
+          "sha256": "9b36502170499d6b50edbf9fb05b662d73a75a897c4bf1d9a0efd8bf1d943fbe",
+          "sha1": "e67f7280a0790412e2726ee787614f0a3f773f0c",
+          "md5": "d0b1ca9b0063f037cbdee58d1b10b2c5"
+        }
+      ]
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-macosarm64-1.7.3-metadata.jar",
+          "url": "kotlinx-coroutines-core-macosarm64-1.7.3-metadata.jar",
+          "size": 4738,
+          "sha512": "86507c3c3e5306d1103e8012f0ef49734a542de779a2c07a4ac67bc4247d28a480d603a65092a279f6400833d44d194e7c2701c3354588a08576f81cca7ebf99",
+          "sha256": "3bb6a11969e762ee4274a9cc6a42f5996a712f79d6b0036f6ec5966c7185bb49",
+          "sha1": "7a2a7c83b4aeecacd3439df535b9a99276bc47a3",
+          "md5": "43b641e513d179e739735fb736887179"
+        }
+      ]
+    }
+  ]
+}

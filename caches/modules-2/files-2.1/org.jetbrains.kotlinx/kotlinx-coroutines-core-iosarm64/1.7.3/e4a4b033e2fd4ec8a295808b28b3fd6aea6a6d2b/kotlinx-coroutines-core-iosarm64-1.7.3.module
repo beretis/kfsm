@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-coroutines-core/1.7.3/kotlinx-coroutines-core-1.7.3.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-coroutines-core",
+    "version": "1.7.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core.klib",
+          "url": "kotlinx-coroutines-core-iosarm64-1.7.3.klib",
+          "size": 765762,
+          "sha512": "483d86d5a87225b59152e734c205f3f9f971ceebeeb02db65d975583b77ca5130f0a80ba8b41959d724ef2cefb1fa0e8930c6df44670ab4d74ce5fe3315fc804",
+          "sha256": "5174f6c71cc362b3e7d8332339506e259ccec28a69bbf1b2cfd8b529722285ae",
+          "sha1": "3513ec882aaa4d3d811cab1e862ce6a82d3ee593",
+          "md5": "3761eba25b13a9351b511f13ffe192dc"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-iosarm64-1.7.3-sources.jar",
+          "url": "kotlinx-coroutines-core-iosarm64-1.7.3-sources.jar",
+          "size": 315719,
+          "sha512": "d67a9ec08602ba919d09da0f79a3b923827cc9167971369d8c86d170dd95c99affe17399b6460db7a283b45905a7f9eb3b1efa4908642b974fc9a47e3dc715e5",
+          "sha256": "9b36502170499d6b50edbf9fb05b662d73a75a897c4bf1d9a0efd8bf1d943fbe",
+          "sha1": "e67f7280a0790412e2726ee787614f0a3f773f0c",
+          "md5": "d0b1ca9b0063f037cbdee58d1b10b2c5"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-iosarm64-1.7.3-metadata.jar",
+          "url": "kotlinx-coroutines-core-iosarm64-1.7.3-metadata.jar",
+          "size": 4738,
+          "sha512": "84fd40a4e23744d444b0f4fd2fd7bcccaae3e85c3da92597554eaf14218b0678d43f2dcce07035cfc1448b30ac4edc6e10c0b8ee4bcd93410e27e8b4d4d444dc",
+          "sha256": "0c22cd22fac19587c632e58fc2b93f893be765da4bec742c54e5b35241904180",
+          "sha1": "1d379772742ac719971b9db4336f295d246b8124",
+          "md5": "a255f35d25ea903d30bb8e936d0886e9"
+        }
+      ]
+    }
+  ]
+}

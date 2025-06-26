@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotlinx-coroutines-core/1.7.3/kotlinx-coroutines-core-1.7.3.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "kotlinx-coroutines-core",
+    "version": "1.7.3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core.klib",
+          "url": "kotlinx-coroutines-core-iosx64-1.7.3.klib",
+          "size": 765744,
+          "sha512": "c68e5acf59d526c5cd24d4590c0e88d1e42612a788b8a16c0daca2658028aa7974e00f508baefaf6ba4c1c7c67d29011e53a071a2f8017f438676762f02e7d2a",
+          "sha256": "0ebe890896e661488a8234c0a5842d37b252065be5cb0dbd6dfe5c5e788faa08",
+          "sha1": "777685a24291096cd3b8ce277115873ed66cbcd7",
+          "md5": "e96d04806f80327236dd04ff03cc8b01"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-iosx64-1.7.3-sources.jar",
+          "url": "kotlinx-coroutines-core-iosx64-1.7.3-sources.jar",
+          "size": 315719,
+          "sha512": "d67a9ec08602ba919d09da0f79a3b923827cc9167971369d8c86d170dd95c99affe17399b6460db7a283b45905a7f9eb3b1efa4908642b974fc9a47e3dc715e5",
+          "sha256": "9b36502170499d6b50edbf9fb05b662d73a75a897c4bf1d9a0efd8bf1d943fbe",
+          "sha1": "e67f7280a0790412e2726ee787614f0a3f773f0c",
+          "md5": "d0b1ca9b0063f037cbdee58d1b10b2c5"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.21.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotlinx-coroutines-core-iosx64-1.7.3-metadata.jar",
+          "url": "kotlinx-coroutines-core-iosx64-1.7.3-metadata.jar",
+          "size": 4738,
+          "sha512": "4235f705b32311b5c7c7c70a1b879f1755eea7427e85e1ce93b749f4cc1c1ed6ea3e1a60cd128288b7b289496f44226d61bee0bf0595acb3d644de08b683701e",
+          "sha256": "63aafc0ae634a42ada229c7348ed34066498797911f53242b0a3ad35f7ac47b7",
+          "sha1": "e993586d1ce085e25706720fae95f074203c870b",
+          "md5": "9402a6ed6bff536dd747f3fa1dd1d289"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.jetbrains.dokka",
+    "module": "dokka-base",
+    "version": "1.9.10",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "dokka-base-1.9.10.jar",
+          "url": "dokka-base-1.9.10.jar",
+          "size": 1610495,
+          "sha512": "96b84eee74da6b4e11dee2ce8b15d360f32fb61ad054b1e6b544cf6bfbee481f817720faf3c08468fe52c96a4596c104e699056c76a78939ec6cc4d7571635ac",
+          "sha256": "d592acddff85d315444339dd43c8aa6308815fa89d25a27b69f211002ec8d25d",
+          "sha1": "1260d1ff2b91af5cdd993e4ae04035921266ef6e",
+          "md5": "142d23400465a7604e685a37fe6e39b5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.dokka",
+          "module": "analysis-markdown",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "org.jsoup",
+          "module": "jsoup",
+          "version": {
+            "requires": "1.15.3"
+          }
+        },
+        {
+          "group": "org.freemarker",
+          "module": "freemarker",
+          "version": {
+            "requires": "2.3.31"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-html-jvm",
+          "version": {
+            "requires": "0.7.5"
+          }
+        },
+        {
+          "group": "com.fasterxml.jackson.module",
+          "module": "jackson-module-kotlin",
+          "version": {
+            "requires": "2.12.7"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.10"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "com.fasterxml.jackson.core",
+          "module": "jackson-databind",
+          "version": {
+            "requires": "2.12.7.1"
+          },
+          "reason": "CVE-2022-42003"
+        }
+      ],
+      "files": [
+        {
+          "name": "dokka-base-1.9.10.jar",
+          "url": "dokka-base-1.9.10.jar",
+          "size": 1610495,
+          "sha512": "96b84eee74da6b4e11dee2ce8b15d360f32fb61ad054b1e6b544cf6bfbee481f817720faf3c08468fe52c96a4596c104e699056c76a78939ec6cc4d7571635ac",
+          "sha256": "d592acddff85d315444339dd43c8aa6308815fa89d25a27b69f211002ec8d25d",
+          "sha1": "1260d1ff2b91af5cdd993e4ae04035921266ef6e",
+          "md5": "142d23400465a7604e685a37fe6e39b5"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "dokka-base-1.9.10-sources.jar",
+          "url": "dokka-base-1.9.10-sources.jar",
+          "size": 368756,
+          "sha512": "8f084c74614944b59bad8f9b143f1c4c6ec87767e8bceae19f1cd77e7d40a2a18eedfe673ddfb4d0a15b1f179eca5233235a0b5095c502acda85bfc0975f4e17",
+          "sha256": "cb361784b02794a1d2a604945ba6698fabe812e1df90ba9cd064828c3599ed86",
+          "sha1": "49c5928d51d644fe6128089d9daf50cce19c7aa6",
+          "md5": "120eded50b4c1929d3b9620a246818ea"
+        },
+        {
+          "name": "dokka-base-1.9.10-sources.jar",
+          "url": "dokka-base-1.9.10-sources.jar",
+          "size": 368756,
+          "sha512": "8f084c74614944b59bad8f9b143f1c4c6ec87767e8bceae19f1cd77e7d40a2a18eedfe673ddfb4d0a15b1f179eca5233235a0b5095c502acda85bfc0975f4e17",
+          "sha256": "cb361784b02794a1d2a604945ba6698fabe812e1df90ba9cd064828c3599ed86",
+          "sha1": "49c5928d51d644fe6128089d9daf50cce19c7aa6",
+          "md5": "120eded50b4c1929d3b9620a246818ea"
+        }
+      ]
+    }
+  ]
+}

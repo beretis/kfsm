@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../atomicfu/0.21.0/atomicfu-0.21.0.module",
+    "group": "org.jetbrains.kotlinx",
+    "module": "atomicfu",
+    "version": "0.21.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-common",
+          "version": {
+            "requires": "1.8.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "atomicfu.klib",
+          "url": "atomicfu-linuxarm64-0.21.0.klib",
+          "size": 47220,
+          "sha512": "e55543cfa68919507f8405b4953094e5c6ccd950aaeb7495d010937765014f63868bd2c7a5f677ac2dd4f9e5d34edf911425490a6e8ddf2733cfbe0e527d3041",
+          "sha256": "24f1e4371bb7945edd7cb7beb223cedf25977f3c31b7e698643e5e11813181d3",
+          "sha1": "27d6911bed9af397c4cc198daf1bd5da5fd3ff1d",
+          "md5": "97c20baace0707529f3f1a6225acb0a9"
+        },
+        {
+          "name": "atomicfu-cinterop-interop.klib",
+          "url": "atomicfu-linuxarm64-0.21.0-cinterop-interop.klib",
+          "size": 8394,
+          "sha512": "63e94a0aa09dbc21751fe442d761e85d9394d97c21fd9c6594423dc610d73e4b6bf3131b8dfc1757fa1c87f3de314da0951e0149dc33f503bb76dbc3369c66bc",
+          "sha256": "704303ec1c659f3ffbea23a0a0cea0172a15f8d3f87ffc81e7aac85399aa5947",
+          "sha1": "7c8712bda65ecfa2d803b5b370d3d22ae407f7ec",
+          "md5": "d6bb128e738b5ec4b937b71fb6b8d2ab"
+        }
+      ]
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "atomicfu-linuxarm64-0.21.0-sources.jar",
+          "url": "atomicfu-linuxarm64-0.21.0-sources.jar",
+          "size": 10264,
+          "sha512": "fe45037b7571dbeac91f1c500658595bddf0e7afb9ac107513c75407745c1f0024b2a0152bf90e5632bb92bf94455c14e8c1e79186639885aa792325c42a78eb",
+          "sha256": "d5fd78cd26c3d821721b7f6315701379d92ef58d6ae1f4020c810b4774b43712",
+          "sha1": "2ade7383dbdc47c9f185ea5e7219410ce2ad7c3e",
+          "md5": "d1baa4a4b2a23a77ccac36a151040326"
+        }
+      ]
+    }
+  ]
+}
