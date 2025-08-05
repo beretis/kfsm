@@ -1,0 +1,270 @@
+import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+import org.jetbrains.kotlin.gradle.tasks.KotlinTest
+
+buildscript {
+    repositories {
+        mavenLocal()
+        google()
+        maven { url = 'https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental' }
+        maven { url = 'https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.jetbrains.kotlinx:kotlinx-html-jvm:0.10.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22'
+        classpath 'org.jetbrains.kotlinx:atomicfu-gradle-plugin:0.23.2'
+        // classpath 'com.android.tools.build:gradle:8.2.2'
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.9.22'
+    id 'org.jetbrains.dokka' version '1.9.10'
+    id 'maven-publish'
+    // id 'com.android.library' version '8.2.2'
+    // id 'signing'
+    // id 'org.asciidoctor.jvm.convert' version '3.3.2'
+    // id 'org.asciidoctor.jvm.gems' version '3.3.2'
+    // id 'com.cosminpolifronie.gradle.plantuml' version '1.6.0'
+    // id 'io.jumpco.open.kfsm.viz-plugin' version '1.5.2.4'
+    // id 'org.jetbrains.qodana' version '2023.3.1'
+}
+
+repositories {
+    mavenLocal()
+    google()
+    maven { url = 'https://maven.pkg.jetbrains.space/kotlin/p/kotlin/temporary' }
+    maven { url = 'https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental' }
+    maven { url = 'https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven' }
+    mavenCentral()
+    // ruby {
+    //     gems()
+    // }
+}
+
+group = 'io.jumpco.open'
+version = '1.9.0-SNAPSHOT'
+description = 'Kotlin Finite-state machine'
+
+// dependencies {
+//     asciidoctorGems 'rubygems:asciidoctor-tabs:v1.0.0-beta.6'
+// }
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+apply plugin: 'kotlinx-atomicfu'
+apply from: "$rootProject.projectDir/gradle/platform.gradle"
+// apply from: "$rootProject.projectDir/gradle/docs.gradle"
+apply from: "$rootProject.projectDir/gradle/publish.gradle"
+
+def useTarget = project.ext.useTarget
+def arch = DefaultNativePlatform.currentArchitecture
+def os = DefaultNativePlatform.currentOperatingSystem;
+
+kotlin {
+    sourceSets {
+        configureEach {
+            languageSettings.optIn("kotlin.RequiresOptIn")
+        }
+        commonMain {
+            dependencies {
+                api 'org.jetbrains.kotlin:kotlin-stdlib'
+                api 'org.jetbrains.kotlin:kotlin-reflect'
+                api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0'
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test'
+                implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0'
+                implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0'
+            }
+        }
+        if (useTarget['jvm']) {
+            jvmTest {
+                dependencies {
+                    implementation 'io.jumpco.open:kfsm-viz:1.5.2.4'
+                    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+                    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.8.0'
+                }
+            }
+        }
+        if (useTarget['js']) {
+            jsTest {
+                dependencies {
+                    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-js:1.8.0'
+                }
+            }
+        }
+        if (useTarget['wasm-js']) {
+            wasmJsTest {
+                dependencies {
+                    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-wasm-js:1.8.0'
+                }
+            }
+        }
+        if (useTarget['android']) {
+            androidMain {
+                dependencies {
+                    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0'
+                }
+            }
+            androidUnitTest {
+                dependencies {
+                    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0'
+                    implementation 'junit:junit:4.13.2'
+                }
+            }
+        }
+        if (useTarget['linux']) {
+            if (arch.amd64) {
+                linuxX64Test {
+                    dependencies {
+                        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-linuxx64:1.8.0'
+                    }
+                }
+            }
+            if (arch.arm64) {
+                linuxArm64 {
+                    dependencies {
+                        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-linuxarm64:1.8.0'
+                    }
+                }
+            }
+        }
+        if (useTarget['macos']) {
+            if (arch.amd64) {
+                macosX64 {
+                    dependencies {
+                        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-macosx64:1.8.0'
+                    }
+                }
+            }
+            if (arch.arm64) {
+                macosArm64 {
+                    dependencies {
+                        implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core-macosarm64:1.8.0'
+                    }
+                }
+            }
+        }
+    }
+}
+
+tasks.withType(KotlinTest).configureEach {
+    reports.junitXml.required = true
+}
+
+def rootDir = rootProject.projectDir.path
+
+if('true' == project.findProperty('dokka')) {
+    logger.lifecycle("dokkaHtml")
+    dokkaHtml {
+        dokkaSourceSets {
+            configureEach {
+                samples.from(
+                    "$rootDir/src/commonTest/kotlin/io/jumpco/open/kfsm/example/TurnstileTypes.kt",
+                    "$rootDir/src/commonTest/kotlin/io/jumpco/open/kfsm/example/ImmutableLockFSM.kt",
+                    "$rootDir/src/commonTest/kotlin/io/jumpco/open/kfsm/example/LockTypes.kt",
+                    "$rootDir/src/commonTest/kotlin/io/jumpco/open/kfsm/example/PayingTurnstileTypes.kt",
+                    "$rootDir/src/commonTest/kotlin/io/jumpco/open/kfsm/example/SecureTurnstile.kt"
+                )
+            }
+        }
+        inputs.dir('src/commonTest/kotlin')
+    }
+} else {
+    dokkaHtml.onlyIf { false }
+}
+dokkaJavadoc.onlyIf { false }
+dokkaJekyll.onlyIf { false }
+dokkaGfm.onlyIf { false }
+
+tasks.register('copyPng', Copy) {
+    from(projectDir) {
+        include '*.png'
+    }
+    into "$layout.buildDirectory/docs/asciidoc"
+}
+
+asciidoctor.dependsOn('copyPng')
+
+plantUml {
+    render input: 'src/docs/plantuml/*.plantuml', output: 'src/docs/asciidoc', format: 'png', withMetadata: false
+}
+
+project.afterEvaluate {
+    def envVar = System.getenv('GRAPHVIZ_DOT')
+    if (envVar) {
+        def dot = file(envVar)
+        if (!dot.exists()) {
+            throw new RuntimeException("Could not find $dot")
+        }
+    } else {
+        def dotFile = new File('/usr/bin/dot')
+        if (!dotFile.exists()) {
+            logger.warn("GRAPHVIZ_DOT env var not found")
+        }
+    }
+}
+
+assemble.dependsOn('generateFsmViz')
+docs.dependsOn('generateFsmViz')
+
+kfsmViz {
+    fsm('TurnstileFSM') {
+        outputFolder = file('generated')
+        input = file('src/commonTest/kotlin/io/jumpco/open/kfsm/example/TurnstileTypes.kt')
+        isGeneratePlantUml = true
+        isGenerateAsciidoc = true
+        output = 'turnstile-detail'
+    }
+    fsm('PayingTurnstileFSM') {
+        outputFolder = file('generated')
+        input = file('src/commonTest/kotlin/io/jumpco/open/kfsm/example/PayingTurnstileTypes.kt')
+        isGeneratePlantUml = true
+        isGenerateAsciidoc = true
+        output = 'paying-turnstile-detail'
+    }
+
+    fsm('SecureTurnstileFSM') {
+        outputFolder = file('generated')
+        input = file('src/commonTest/kotlin/io/jumpco/open/kfsm/example/SecureTurnstile.kt')
+        isGeneratePlantUml = true
+        isGenerateAsciidoc = true
+        output = 'secure-turnstile-detail'
+    }
+
+    fsm('TimerSecureTurnstileFSM') {
+        outputFolder = file('generated')
+        input = file('src/commonTest/kotlin/io/jumpco/open/kfsm/example/TimeoutSecureTurnstile.kt')
+        isGeneratePlantUml = true
+        isGenerateAsciidoc = true
+        output = 'timeout-turnstile-detail'
+    }
+    fsm('PacketReaderFSM') {
+        outputFolder = file('generated')
+        input = file('src/commonTest/kotlin/io/jumpco/open/kfsm/example/PacketReaderTests.kt')
+        isGeneratePlantUml = true
+        isGenerateAsciidoc = true
+        output = 'packet-reader-detail'
+    }
+}
+
+// android {
+//     namespace = 'io.jumpco.open.kfsm'
+//     compileSdk = 34
+//     
+//     defaultConfig {
+//         minSdk = 21
+//     }
+//     
+//     compileOptions {
+//         sourceCompatibility = JavaVersion.VERSION_17
+//         targetCompatibility = JavaVersion.VERSION_17
+//     }
+// }

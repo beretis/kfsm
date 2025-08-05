@@ -1,9 +1,9 @@
 pluginManagement {
     repositories {
-        mavenLocal()
-        maven { url = 'https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental' }
+        google()
         gradlePluginPortal()
         mavenCentral()
+        mavenLocal()
     }
 }
 

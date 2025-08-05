@@ -18,7 +18,7 @@
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 
 apply plugin: 'org.jetbrains.kotlin.multiplatform'
-def targetList = ['mingw', 'linux', 'macos', 'js', 'jvm', 'wasm-js']
+def targetList = ['mingw', 'linux', 'macos', 'js', 'jvm', 'wasm-js', 'android', 'ios']
 
 project.ext.useTarget = [:]
 def useTarget = project.ext.useTarget
@@ -117,24 +117,38 @@ kotlin {
         }
     }
     if (useTarget['macos']) {
-        iosArm64() {
-            mavenPublication {
-                artifactId = "${project.name}-iosarm64"
-            }
-        }
         macosArm64() {
             mavenPublication {
                 artifactId = "${project.name}-macosarm64"
             }
         }
-        watchosArm64() {
+        macosX64() {
             mavenPublication {
-                artifactId = "${project.name}-watcharm64"
+                artifactId = "${project.name}-macosx64"
             }
         }
-        tvosArm64() {
+    }
+    if (useTarget['ios']) {
+        iosArm64() {
             mavenPublication {
-                artifactId = "${project.name}-tvosarm64"
+                artifactId = "${project.name}-iosarm64"
+            }
+        }
+        iosX64() {
+            mavenPublication {
+                artifactId = "${project.name}-iosx64"
+            }
+        }
+        iosSimulatorArm64() {
+            mavenPublication {
+                artifactId = "${project.name}-iossimulatorarm64"
+            }
+        }
+    }
+    if (useTarget['android']) {
+        androidTarget() {
+            mavenPublication {
+                artifactId = "${project.name}-android"
             }
         }
     }
@@ -178,6 +192,11 @@ kotlin {
         if (useTarget['macos']) {
             configureNative(macosArm64Main, macosArm64Test)
             configureNative(macosX64Main, macosX64Test)
+        }
+        if (useTarget['ios']) {
+            configureNative(iosArm64Main, iosArm64Test)
+            configureNative(iosX64Main, iosX64Test)
+            configureNative(iosSimulatorArm64Main, iosSimulatorArm64Test)
         }
     }
 }
